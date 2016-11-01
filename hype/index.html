@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Webpack</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body class="impress-not-supported">
+        <div class="fallback-message">
+            <p>Your browser doesn't support the features required for this presentation.</p>
+        </div>
+        <div id="impress">
+            <div class="step big">
+                A long time ago...
+            </div>
+            <div class="step" data-z="-1000" data-y="-1000">
+                <div class="big">
+                    When developers still used the <code class="blink">&lt;blink&gt;</code> tag...
+                </div>
+                <small>(probably not <em>that</em> long ago)</small>
+            </div>
+            <div class="step big" data-z="-2000" data-y="-2000">
+                There were two JavaScript module systems...
+            </div>
+            <div class="step" data-z="-2000" data-y="-2000" data-x="500" data-rotate="90">
+                <div>AMD (Asynchronous Module Definition) for the front-end:</div>
+                <pre>
+define(['underscore', 'jquery'], function(_, $) {
+    var add = function(a, b) {
+        return a + b;
+    };
+    return {
+        add: add
+    };
+});
+                </pre>
+            </div>
+            <div class="step" data-z="-2000" data-y="-2000" data-x="-500" data-rotate="270">
+                <div>and CommonJS for the back-end (i.e. Node.js):</div>
+                <pre>
+var _ = require('underscore');
+var $ = require('jquery');
+
+var add = function(a, b) {
+    return a + b;
+};
+
+module.exports = {
+    add: add
+};
+                </pre>
+            </div>
+            <div class="step big" data-z="-3000" data-y="-3000">
+                Then someone came along and said:
+            </div>
+            <div class="step big" data-z="-4000" data-y="-4000">
+                "Let's deprecate <code class="blink">&lt;blink&gt;</code>"
+            </div>
+            <div class="step big" data-z="-5000" data-y="-5000">
+                And everyone was sad.
+            </div>
+            <div class="step big" data-z="-6000" data-y="-6000">
+                Then someone <em>else</em> came along and said:
+            </div>
+            <div class="step big" data-z="-7000" data-y="-7000">
+                "Why don't we use CommonJS for the front-end?"
+            </div>
+            <div class="step big" data-z="-8000" data-y="-8000">
+                The townspeople were enraged: "A <em>synchronous</em> module system, for the front-end? Do you hate puppies as well?"
+            </div>
+            <div class="step medium" data-z="-9000" data-y="-9000" data-x="-100" data-rotate="-90">
+                Nonetheless, projects such as <a href="http://browserify.org/">Browserify</a> evolved, which allowed front-end code to be <em>developed</em> with CommonJS, and then <em>bundled</em> into a single JavaScript file for use in the browser, thus avoiding the problem with synchronous modules.
+            </div>
+            <div class="step medium" data-z="-9000" data-y="-9000" data-x="100" data-rotate="90">
+                Developers frantically tried to wire Browserify into their workflows, using Gulp, Grunt, even Broccoli and Brunch, resulting in massive build configs and highly-coupled tasks.
+            </div>
+            <div class="step medium" data-z="-10000" data-y="-10000">
+                After decades <small>(months)</small> of war and turmoil <small>(lots of JS libraries all doing the same thing)</small>, the rebel alliance <small>(developers)</small> began to converge on one module bundling system when someone at Facebook said they liked it better...
+            </div>
+            <div class="step light-bg" data-z="-11000" data-y="-11000">
+                <div class="welcome"><strong>Welcome to Webpack</strong></div>
+                <img src="https://camo.githubusercontent.com/ebc085019011ababb0d35024824304831c7dc72a/68747470733a2f2f7765627061636b2e6769746875622e696f2f6173736574732f6c6f676f2e706e67" alt="Webpack">
+            </div>
+            <div class="step" data-z="-11000" data-y="-11000" data-x="-650" data-rotate="-90">
+                Not only does webpack recognize and bundle both AMD and CommonJS...
+                <br>
+                <br>
+                <div><span class="operand">AMD</span> + <span class="operand">CommonJS</span> = <span class="operand">One JS Bundle</span></div>
+            </div>
+            <div class="step" data-z="-11000" data-y="-11500">
+                ... it also bundles other static assets (such as CSS and images), automatically resolves dependencies from your node_modules, ...
+                <br>
+                <br>
+                <div>+= <span class="operand css"><code>
+                            img.llamas { height: 200px; width: auto; display: inline-block; margin-bottom: -90px; }</code>
+</span> + <img src="http://avidly.lareviewofbooks.org/wp-content/uploads/2015/02/baby-llamas.jpg" alt="Llamas" class="llamas"> + <span class="operand">underscore, jquery, etc.</span></div>
+<small>(Yeah, I used negative margin. Deal with it.)</small>
+            </div>
+            <div class="step medium" data-z="-11000" data-y="-11000" data-x="650" data-rotate="90">
+                ... and includes support for multiple bundles, uglification, and so much more - by <em>default</em>.
+            </div>
+            <div class="step medium" data-z="-12000" data-y="-13000">
+                But just when the rebel alliance thought it was safe, the Galactic Empire <small>(ECMA International)</small> released their new battle ship, the ES Codebase Destroyer <small>(ECMASript version 6)</small>, with one particularly massive change...
+            </div>
+            <div class="step medium" data-z="-13000" data-y="-14000">
+                One module system to rule them all: ES2015 modules.
+                <pre>
+import _ from 'underscore';
+import $ from 'jquery';
+
+export const add = (a, b) => a + b;
+                </pre>
+            </div>
+            <div class="step big" data-z="-14000" data-y="-15000">
+                Can the rebel alliance survive?
+            </div>
+            <div class="step big" data-z="-15000" data-y="-16000">
+                Is browserify webpack's father?
+            </div>
+            <div class="step big" data-z="-16000" data-y="-17000">
+                Will the W3C bring back <code class="blink">&lt;blink&gt;</code>?
+                <br>
+                <small>(Spoiler: they won't)</small>
+            </div>
+            <div class="step" data-z="-17000" data-y="-18000">
+                Come to the
+                <br>
+                <br>
+                <div class="big">Webpack Brownbag</div>
+                <br>
+                on Friday, November 4th at 3pm to find out!
+            </div>
+            <div id="overview" class="step" data-rotate-x="-30" data-y="-100" data-rotate-y="30" data-x="400">
+
+            </div>
+        </div>
+        <script type="text/javascript" src="impress.js"></script>
+        <script type="text/javascript">impress().init();</script>
+        <script type="text/javascript">
+            (function() {
+                var blinkers = document.getElementsByClassName('blink');
+                var visible = true;
+                setInterval(function() {
+                    for(var i = 0; i < blinkers.length; i++) {
+                        blinkers[i].style.visibility = visible ? 'visible' : 'hidden';
+                    }
+                    visible = !visible;
+                }, 1000);
+            })();
+        </script>
+    </body>
+</html>
