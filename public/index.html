@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>Webpack</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body class="impress-not-supported">
         <div class="fallback-message">
@@ -67,7 +66,7 @@ module.exports = {
                 "Why don't we use CommonJS for the front-end?"
             </div>
             <div class="step big" data-z="-8000" data-y="-8000">
-                The townspeople were enraged: "A <em>synchronous</em> module system, for the front-end? Do you hate puppies as well?"
+                The townspeople were outraged: "A <em>synchronous</em> module system, for the front-end? Do you hate puppies as well?"
             </div>
             <div class="step medium" data-z="-9000" data-y="-9000" data-x="-100" data-rotate="-90">
                 Nonetheless, projects such as <a href="http://browserify.org/">Browserify</a> evolved, which allowed front-end code to be <em>developed</em> with CommonJS, and then <em>bundled</em> into a single JavaScript file for use in the browser, thus avoiding the problem with synchronous modules.
@@ -135,19 +134,6 @@ export const add = (a, b) => a + b;
 
             </div>
         </div>
-        <script type="text/javascript" src="impress.js"></script>
-        <script type="text/javascript">impress().init();</script>
-        <script type="text/javascript">
-            (function() {
-                var blinkers = document.getElementsByClassName('blink');
-                var visible = true;
-                setInterval(function() {
-                    for(var i = 0; i < blinkers.length; i++) {
-                        blinkers[i].style.visibility = visible ? 'visible' : 'hidden';
-                    }
-                    visible = !visible;
-                }, 1000);
-            })();
-        </script>
+        <script type="text/javascript" src="build/bundle.js"></script>
     </body>
 </html>
