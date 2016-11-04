@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Intro to Webpack</title>
+    </head>
+    <body class="impress-not-supported">
+        <div class="fallback-message">
+            Your browser does not have the features required for this presentation.
+        </div>
+        <div id="impress">
+            <div class="step big" data-y="1000">
+                <img src="https://camo.githubusercontent.com/ebc085019011ababb0d35024824304831c7dc72a/68747470733a2f2f7765627061636b2e6769746875622e696f2f6173736574732f6c6f676f2e706e67" alt="Webpack" class="webpack">
+            </div>
+            <div class="step" id="preview" data-y="-1250" data-z="600">
+            </div>
+            <div class="step tile medium border-yellow" data-y="-1510" data-x="-260">
+                What the browser wants
+            </div>
+            <div class="step subtile border-yellow" data-y="-1625" data-x="-620" data-scale="0.2">
+                <h1>Browsers want script tags!</h1>
+                <code>&lt;script src="myawesomecode.js"&gt;&lt;/script&gt;</code>
+            </div>
+            <div class="step subtile border-yellow" data-y="-1700" data-x="-620" data-scale="0.2">
+                <h1>And style tags!</h1>
+                <code>&lt;link rel="stylesheet" href="awesomestyles.css"&gt;</code>
+            </div>
+            <div class="step subtile border-yellow" data-y="-1830" data-x="-580" data-scale="0.2" data-rotate="45">
+                <h1>But they don't want too many...</h1>
+                While your browser can (and does) download static assets concurrently...
+            </div>
+            <div class="step subtile border-yellow medium" data-y="-1880" data-x="-450" data-scale="0.2" data-rotate="90">
+                The overhead of initiating lots of HTTP requests can result in very poor performance for your website.
+            </div>
+            <div class="step subtile border-yellow" data-y="-1880" data-x="-350" data-scale="0.2" data-rotate="90">
+                <h1><code>window</code></h1>
+                In the browser, <code>window</code> is basically a wild global scope party.
+                <br>
+                <br>
+                The browser tempts you to put your code on window (the cover fee is your soul).
+            </div>
+            <div class="step subtile border-yellow" data-y="-1880" data-x="-250" data-scale="0.2" data-rotate="90">
+                <h1>In Summary</h1>
+                <ul>
+                    <li>We have to communicate with browsers using script tags.</li>
+                    <li>In most cases, fewer script tags === faster-loading site</li>
+                    <li>Hell is real, its name is <code>window</code></li>
+                </ul>
+            </div>
+            <div class="step tile medium border-blue" data-y="-1510" data-x="260">
+                What developers want
+            </div>
+            <div class="step subtile medium border-blue" data-y="-1880" data-x="250" data-scale="0.2" data-rotate="-90">
+                Developers want to split their code into modules.
+            </div>
+            <div class="step subtile medium border-blue" data-y="-1880" data-x="350" data-scale="0.2" data-rotate="-90">
+                Developers want explicit dependency management.
+            </div>
+            <div class="step subtile medium border-blue" data-y="-1880" data-x="450" data-scale="0.2" data-rotate="-90">
+                Developers want to use ECMAScript 2015 (ES6) (and beyond).
+            </div>
+            <div class="step subtile medium border-blue" data-y="-1830" data-x="580" data-scale="0.2" data-rotate="-45">
+                Developers want to make websites that load quickly.
+            </div>
+            <div class="step subtile medium border-blue" data-y="-1700" data-x="620" data-scale="0.2">
+                Developers want to write JavaScript without entering a manic depressive state.
+            </div>
+            <div class="step subtile medium border-blue" data-y="-1600" data-x="620" data-scale="0.2">
+                Obviously, there exists a disparity between what developers want and what they have to deliver to the browser.
+            </div>
+            <div class="step tile medium border-red" data-y="-990" data-x="-260">
+                What developers do
+            </div>
+            <div class="step subtile border-red" data-y="-1025" data-x="-620" data-scale="0.2" data-rotate="180">
+                <h1>We cry</h1>
+                <img src="https://pbs.twimg.com/profile_images/577309793104175104/y2jIo9dq.png" alt="BibleThump">
+            </div>
+            <div class="step subtile border-red medium" data-y="-925" data-x="-620" data-scale="0.2" data-rotate="180">
+                Then we engineer a better way. (So more crying.)
+            </div>
+            <div class="step subtile border-red medium" data-y="-825" data-x="-620" data-scale="0.2" data-rotate="180">
+                We use tools, like Babel, which convert our ES6 code into browser-compatible, vanilla JavaScript. This is called <strong class="big">transpilation</strong>
+            </div>
+            <div class="step subtile border-red medium" data-y="-655" data-x="-590" data-rotate="135" data-scale="0.2">
+                Instead of putting 678765434567 script tags on our pages, we harness tools to combine them all into one script which we then serve in production. This is called
+                <strong class="big">concatenation</strong>
+            </div>
+            <div class="step subtile medium border-red" data-y="-600" data-x="-460" data-scale="0.2" data-rotate="90">
+                We minify our code in order to serve the fewest bytes possible to clients. This is called
+                <strong class="big">minification</strong>
+            </div>
+            <div class="step subtile medium border-red" data-y="-600" data-x="-360" data-scale="0.2" data-rotate="90">
+                (And we do a whole host of things along the way, like Sass, cache-busting, more concatenation, more minification, source maps, auto-prefixing, ...)
+            </div>
+            <div class="step subtile medium border-red" data-y="-600" data-x="-260" data-scale="0.2" data-rotate="90">
+                Finally, we use a task runner, such as Gulp or Grunt, to wire everything together. We step back to behold our glorious build system...
+            </div>
+            <div class="step subtile medium border-red" data-y="-600" data-x="-160" data-scale="0.2" data-rotate="90">
+                And we see a thousand-line Gruntfile...
+            </div>
+            <div class="step subtile medium border-red" data-y="-600" data-x="-60" data-scale="0.2" data-rotate="90">
+                And a package.json with dozens of dependencies <em>just</em> for running the build task...
+            </div>
+            <div class="step subtile medium border-red" data-y="-600" data-x="40" data-scale="0.2" data-rotate="90">
+                <img src="http://i3.kym-cdn.com/entries/icons/facebook/000/012/073/7686178464_fdc8ea66c7.jpg" alt="Lie down, try not to cry, cry a lot">
+            </div>
+            <div class="step subtile medium border-red" data-y="-600" data-x="140" data-scale="0.2" data-rotate="90">
+                We've achieved what we wanted...
+                <br>
+                <br>
+                ...but shouldn't there be a better way?
+            </div>
+            <div class="step tile medium border-green" data-y="-990" data-x="260">
+                How webpack can help
+            </div>
+            <div class="step" data-y="-990" data-x="830">
+                <img src="http://www.clipartkid.com/images/582/image-arrow-cliparts-co-4qvQAt-clipart.png" alt="Right arrow" class="arrow">
+            </div>
+            <div class="step big" data-y="-990" data-x="1380">
+              Demo Hype!
+            </div>
+            <div class="step" data-y="-990" data-x="1900">
+                <img src="http://www.clipartkid.com/images/582/image-arrow-cliparts-co-4qvQAt-clipart.png" alt="Right arrow" class="arrow">
+            </div>
+            <div class="step tile medium border-yellow bubble" data-y="-990" data-x="3000" data-scale="2" data-rotate-y="45">
+              Webpack makes sensible assumptions about what you want to do with your web app, and enables them by default.
+            </div>
+            <div class="step tile big border-blue bubble" data-y="-990" data-x="4000" data-scale="2" data-rotate-y="-45">
+              Webpack replaces RequireJS.
+            </div>
+            <div class="step tile big border-green bubble" data-y="-990" data-x="5000" data-scale="2" data-rotate-y="45">
+              Webpack is like a better Browserify.
+            </div>
+            <div class="step tile big border-red bubble" data-y="-990" data-x="6000" data-scale="2" data-rotate-y="-45">
+              Webpack is not perfect.
+            </div>
+            <div class="step" id="overview" data-z="4000" data-y="-1000" data-rotate-y="-30">
+
+            </div>
+        </div>
+        <script type="text/javascript" src="/build/main.bundle.js"></script>
+    </body>
+</html>
