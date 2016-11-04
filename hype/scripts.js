@@ -1,4 +1,4 @@
-var impress = require('./impress');
+var impress = require('../impress');
 
 impress().init();
 

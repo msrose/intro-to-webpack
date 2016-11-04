@@ -1,11 +1,17 @@
 module.exports = {
-    entry: [
-        './hype/styles.css',
-        './hype/scripts'
-    ],
+    entry: {
+        hype: [
+            './hype/styles.css',
+            './hype/scripts'
+        ],
+        main: [
+            './main/styles.css',
+            './main/scripts'
+        ]
+    },
     output: {
         path: __dirname + '/public/build',
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         publicPath: '/build'
     },
     module: {

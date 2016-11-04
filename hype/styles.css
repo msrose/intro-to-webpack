@@ -122,6 +122,9 @@ span.operand.css {
 
 .impress-enabled .fallback-message {
     display: none;
+}
+
+.fallback-message {
     background-color: white;
     color: black;
 }
