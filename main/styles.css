@@ -96,3 +96,8 @@ img.arrow {
     width: 500px;
     height: auto;
 }
+
+.tile.bubble {
+  border-radius: 200px;
+  padding-top: 120px;
+}
