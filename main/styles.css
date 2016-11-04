@@ -91,3 +91,8 @@ img.webpack {
     background-color: white;
     border-radius: 10px;
 }
+
+img.arrow {
+    width: 500px;
+    height: auto;
+}
