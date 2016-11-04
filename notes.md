@@ -22,14 +22,7 @@
 - JavaScript fatigue is real and dangerous to your health
 - Quote from Jason Benterou:
 
-```
-Jason Benterou [10:51 PM]
-JS has to solve these problems: [it] runs on devices with hugely different standard libraries and even different basic language features and "deployment" occurs in 500ms or less. Imagine writing Python code for a machine that might or might not even have a for-each iterator.
-
-Plus you are usually using JS to manage a rich interactive UI which can lead to extremely complex code if not well-organized.
-
-To solve these problems today we can write powerful programs in ES6 and JSX code and use Babel to generate universally-compatible JS, then serialize and compress minimally-useful subsets of the codebase with Webpack.
-```
+> JS has to solve these problems: [it] runs on devices with hugely different standard libraries and even different basic language features and "deployment" occurs in 500ms or less. Imagine writing Python code for a machine that might or might not even have a for-each iterator. Plus you are usually using JS to manage a rich interactive UI which can lead to extremely complex code if not well-organized. To solve these problems today we can write powerful programs in ES6 and JSX code and use Babel to generate universally-compatible JS, then serialize and compress minimally-useful subsets of the codebase with Webpack.
 
 ## What developers do
 
